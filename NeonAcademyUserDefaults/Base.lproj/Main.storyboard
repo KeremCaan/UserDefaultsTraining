@@ -1,24 +1,100 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="NeonAcademyUserDefaults" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What is the name of the place you want to visit?" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IE0-Yv-P7D">
+                                <rect key="frame" x="64" y="137" width="287" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="287" id="NCN-Qj-o5n"/>
+                                    <constraint firstAttribute="height" constant="45" id="pja-Ev-6QA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bX8-Qr-Wbx">
+                                <rect key="frame" x="180" y="297" width="51" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Have you been to this place before?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QRV-9g-mhg">
+                                <rect key="frame" x="64" y="243" width="272" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="lqE-rC-qfq">
+                                <rect key="frame" x="160" y="447" width="94" height="32"/>
+                                <connections>
+                                    <action selector="stepperValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="Jsj-Xo-yeX"/>
+                                </connections>
+                            </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many times have you visited this place?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O3D-qz-aBn">
+                                <rect key="frame" x="38" y="371" width="338" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DRQ-ib-gXJ">
+                                <rect key="frame" x="198" y="513" width="18" height="35"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UmM-wi-zHP">
+                                <rect key="frame" x="180" y="584" width="55.5" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Save"/>
+                                <connections>
+                                    <action selector="saveButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xNC-9w-TwA"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="UmM-wi-zHP" firstAttribute="top" secondItem="DRQ-ib-gXJ" secondAttribute="bottom" constant="36" id="G1F-4j-Mht"/>
+                            <constraint firstItem="DRQ-ib-gXJ" firstAttribute="top" secondItem="lqE-rC-qfq" secondAttribute="bottom" constant="34" id="I7I-k4-2Rx"/>
+                            <constraint firstItem="bX8-Qr-Wbx" firstAttribute="top" secondItem="QRV-9g-mhg" secondAttribute="bottom" constant="33" id="NK7-2Z-OfW"/>
+                            <constraint firstItem="UmM-wi-zHP" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="180" id="W04-0F-dZo"/>
+                            <constraint firstItem="O3D-qz-aBn" firstAttribute="top" secondItem="bX8-Qr-Wbx" secondAttribute="bottom" constant="43" id="ZbT-Gm-mF3"/>
+                            <constraint firstItem="QRV-9g-mhg" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="64" id="cIT-av-Dqs"/>
+                            <constraint firstItem="DRQ-ib-gXJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="198" id="cnd-i7-SZI"/>
+                            <constraint firstItem="IE0-Yv-P7D" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="64" id="eam-gd-ib5"/>
+                            <constraint firstItem="IE0-Yv-P7D" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="93" id="ecX-nu-nDx"/>
+                            <constraint firstItem="QRV-9g-mhg" firstAttribute="top" secondItem="IE0-Yv-P7D" secondAttribute="bottom" constant="61" id="hFL-H3-0MH"/>
+                            <constraint firstItem="O3D-qz-aBn" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="38" id="hPo-BF-mAR"/>
+                            <constraint firstItem="lqE-rC-qfq" firstAttribute="top" secondItem="O3D-qz-aBn" secondAttribute="bottom" constant="55" id="svC-dz-Y4K"/>
+                            <constraint firstItem="bX8-Qr-Wbx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="180" id="tuG-kr-CaW"/>
+                            <constraint firstItem="lqE-rC-qfq" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="160" id="ufd-q7-yN3"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="stepper" destination="lqE-rC-qfq" id="Baa-2F-mJ1"/>
+                        <outlet property="stepperLabel" destination="DRQ-ib-gXJ" id="tKw-On-fSo"/>
+                        <outlet property="switchState" destination="bX8-Qr-Wbx" id="qQb-Jr-guF"/>
+                        <outlet property="textField" destination="IE0-Yv-P7D" id="Atq-Rj-fVe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="28.985507246376812" y="59.598214285714285"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
 </document>
